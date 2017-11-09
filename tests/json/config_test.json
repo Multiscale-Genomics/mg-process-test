@@ -1,0 +1,34 @@
+{
+    "input_files": [],
+    "arguments": [
+        {
+            "name": "project",
+            "value": "run001"
+        },
+        {
+            "name": "description",
+            "value": null
+        }
+    ],
+    "output_files": [
+        {
+            "required": true,
+            "allow_multiple": false,
+            "name": "output",
+            "file": {
+                "file_type": "TXT",
+                "meta_data": {
+                    "visible": true,
+                    "tool": "testTool",
+                    "description": "Output"
+                },
+                "file_path": "tests/test.txt",
+                "data_type": "text",
+                "compressed": ""
+            }
+        }
+    ]
+}
+
+
+
