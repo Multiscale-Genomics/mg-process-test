@@ -2,7 +2,9 @@
 
 
 
-Example pipelines file that is ready to run in the VRE matching the code in the HowTo documentation
+Example pipelines file that is ready to run in the VRE matching the code in the HowTo documentation.
+
+This repo structure workflows and tools can be forked and used as the base template for new tools and workflows. It should have all of the base functionality and is set up for unit testing and with pylint to ensure code clarity.
 
 # Requirements
 - pyenv and pyenv-virtualenv
@@ -14,8 +16,6 @@ Example pipelines file that is ready to run in the VRE matching the code in the 
 
 Installation
 ------------
-
-For a guide to the full installation procedure the see [ReadTheDocs](http://mg-process-fastq.readthedocs.io).
 
 Directly from GitHub:
 
