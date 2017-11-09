@@ -1,0 +1,43 @@
+{
+  "_id": "process_test",
+  "name": "Process Test",
+  "title": "Test Workflow",
+  "short_description": "Generates file with some text",
+  "owner": {
+    "institution": "EMBL-EBI",
+    "author": "Mark McDowall",
+    "contact": "mcdowall@ebi.ac.uk",
+    "url": "https://github.com/Multiscale-Genomics/mg-process-test"
+  },
+  "external": true,
+  "has_custom_viewer": false
+  "keywords": [
+    "dna"
+  ],
+  "infrastructure": {
+    "memory": 12,
+    "cpus": 4,
+    "executable": "/home/pmes/code/mg-process-test/process_test.py",
+    "clouds": {}
+  },
+  "input_files": [],
+  "arguments": [],
+  "output_files": [
+    {
+      "name": "output",
+      "required": true,
+      "allow_multiple": false,
+      "file": {
+        "file_type": "TXT",
+        "meta_data": {
+          "visible": true,
+          "tool": "process_test",
+          "description": "Output"
+        },
+        "file_path": "test.txt",
+        "data_type": "text",
+        "compressed": ""
+      }
+    }
+  ]
+}
