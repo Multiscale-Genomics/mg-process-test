@@ -1,0 +1,2 @@
+git+https://github.com/Multiscale-Genomics/mg-tool-api.git
+ConfigParser
