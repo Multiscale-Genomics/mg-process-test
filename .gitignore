@@ -1,4 +1,4 @@
-*.tsv
+*.txt
 .python-version
 *.pyc
 env
