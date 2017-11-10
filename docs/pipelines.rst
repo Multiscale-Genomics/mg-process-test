@@ -31,7 +31,8 @@ Test Tool
    .. code-block:: none
       :linenos:
 
-      runcompss --lang=python /home/compss/mg-process-test/process_test.py --config /home/compss/mg-process-test/tool_config/process_test.json --in_metadata /home/compss/mg-process-test/test/json/input_test.json --out_metadata /home/compss/mg-process-test/test/
+      cd /home/compss/code/mg-process-test
+      runcompss --lang=python process_test.py --config /home/compss/code/mg-process-test/tool_config/process_test.json --in_metadata /home/compss/code/mg-process-test/tests/json/input_test.json --out_metadata /home/compss/code/mg-process-test/tests/results.json
 
    Methods
    =======

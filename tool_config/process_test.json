@@ -10,7 +10,7 @@
     "url": "https://github.com/Multiscale-Genomics/mg-process-test"
   },
   "external": true,
-  "has_custom_viewer": false
+  "has_custom_viewer": false,
   "keywords": [
     "dna"
   ],
