@@ -31,6 +31,7 @@ Create the Python environment
 
 ```
 pyenv-virtualenv 2.7.12 mg-process-test
+pyenv activate mg-process-test
 pip install -e .
 pip install -r requirements.txt
 ```
