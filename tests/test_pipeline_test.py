@@ -20,13 +20,9 @@ from __future__ import print_function
 import os.path
 import pytest # pylint: disable=unused-import
 
-from basic_modules.metadata import Metadata
+from process_test import process_test
 
-from process_genome import process_genome
-
-@pytest.mark.genome
-@pytest.mark.pipeline
-def test_genome_pipeline():
+def test_test_pipeline():
     """
     Test case to ensure that the Genome indexing pipeline code works.
 
@@ -34,7 +30,7 @@ def test_genome_pipeline():
 
     .. code-block:: none
 
-       JSONDIR=/home/compss/code/mg-process-test/test
+       JSONDIR=/home/compss/code/mg-process-test/tests
        runcompss                                                         \\
           --lang=python                                                  \\
           --python_path=/<pyenv_virtenv_dir>/lib/python2.7/site-packages/
@@ -48,17 +44,13 @@ def test_genome_pipeline():
 
     files = {}
 
-    metadata = {
-        "genome": Metadata(
-            "Assembly", "fasta", files['genome'], None,
-            {'assembly' : 'GCA_000001405.22'}),
-    }
+    metadata = {}
 
     files_out = {
         "output": resource_path + 'test.txt',
     }
 
-    tt_handle = process_genome()
+    tt_handle = process_test()
     tt_files, tt_meta = tt_handle.run(files, metadata, files_out)
 
     print(tt_files)
