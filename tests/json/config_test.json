@@ -22,7 +22,7 @@
                     "tool": "testTool",
                     "description": "Output"
                 },
-                "file_path": "tests/test.txt",
+                "file_path": "tests/data/test.txt",
                 "data_type": "text",
                 "compressed": ""
             }
