@@ -19,20 +19,18 @@ Installation
 
 Directly from GitHub:
 
-.. code-block:: none
-   :linenos:
+```
+cd ${HOME}/code
 
-   cd ${HOME}/code
+git clone https://github.com/Multiscale-Genomics/mg-process-test.git
 
-   git clone https://github.com/Multiscale-Genomics/mg-process-test.git
-
-   cd mg-process-test
+cd mg-process-test
+```
 
 Create the Python environment
 
-.. code-block:: none
-   :linenos:
-
-   pyenv-virtualenv 2.7.12 mg-process-test
-   pip install -e .
-   pip install -r requirements.txt
+```
+pyenv-virtualenv 2.7.12 mg-process-test
+pip install -e .
+pip install -r requirements.txt
+```
