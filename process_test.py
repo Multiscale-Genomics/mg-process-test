@@ -84,7 +84,7 @@ class process_test(Workflow):
 
 def main_json(config, in_metadata, out_metadata):
     """
-    Alternative main function
+    Main function
     -------------
 
     This function launches the app using configuration written in
