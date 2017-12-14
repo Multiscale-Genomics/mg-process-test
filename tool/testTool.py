@@ -18,6 +18,8 @@ from __future__ import print_function
 
 import sys
 
+from utils import logger
+
 try:
     if hasattr(sys, '_run_from_cmdl') is True:
         raise ImportError
@@ -25,16 +27,15 @@ try:
     from pycompss.api.task import task
     from pycompss.api.api import compss_wait_on
 except ImportError:
-    print("[Warning] Cannot import \"pycompss\" API packages.")
-    print("          Using mock decorators.")
+    logger.warn("[Warning] Cannot import \"pycompss\" API packages.")
+    logger.warn("          Using mock decorators.")
 
-    from dummy_pycompss import FILE_OUT
-    from dummy_pycompss import task
-    from dummy_pycompss import compss_wait_on
+    from utils.dummy_pycompss import FILE_OUT # pylint: disable=ungrouped-imports
+    from utils.dummy_pycompss import task
+    from utils.dummy_pycompss import compss_wait_on
 
 from basic_modules.tool import Tool
 from basic_modules.metadata import Metadata
-from utils import logger
 
 # ------------------------------------------------------------------------------
 
@@ -55,7 +56,7 @@ class testTool(Tool):
 
         self.configuration.update(configuration)
 
-    @task(file_loc=FILE_OUT)
+    @task(returns=bool, file_loc=FILE_OUT, isModifier=False)
     def test_writer(self, file_loc):
         """
         Writes a single line to a file and then returns that file
@@ -70,8 +71,12 @@ class testTool(Tool):
         bool
             Writes to the file, which is returned by pyCOMPSs to the defined location
         """
-        with open(file_loc, "w") as file_handle:
-            file_handle.write("This is the test writer")
+        try:
+            with open(file_loc, "w") as file_handle:
+                file_handle.write("This is the test writer")
+        except IOError as error:
+            logger.fatal("I/O error({0}): {1}".format(error.errno, error.strerror))
+            return False
 
         return True
 
@@ -99,8 +104,11 @@ class testTool(Tool):
         results = self.test_writer(
             output_files['output']
         )
-
         results = compss_wait_on(results)
+
+        if results is False:
+            logger.fatal("Test Writer: run failed")
+            return {}, {}
 
         output_metadata = {
             "output": Metadata(
