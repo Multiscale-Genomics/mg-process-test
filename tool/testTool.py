@@ -31,8 +31,8 @@ except ImportError:
     logger.warn("          Using mock decorators.")
 
     from utils.dummy_pycompss import FILE_OUT # pylint: disable=ungrouped-imports
-    from utils.dummy_pycompss import task
-    from utils.dummy_pycompss import compss_wait_on
+    from utils.dummy_pycompss import task # pylint: disable=ungrouped-imports
+    from utils.dummy_pycompss import compss_wait_on # pylint: disable=ungrouped-imports
 
 from basic_modules.tool import Tool
 from basic_modules.metadata import Metadata
@@ -115,8 +115,8 @@ class testTool(Tool):
                 data_type="<data_type>",
                 file_type="txt",
                 file_path=output_files["output"],
-                sources=[],
-                taxon_id=9606,
+                sources=[input_metadata["input_file_location"].file_path],
+                taxon_id=input_metadata["input_file_location"].taxon_id,
                 meta_data={
                     "tool": "testTool"
                 }
