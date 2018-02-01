@@ -115,8 +115,8 @@ class testTool(Tool):
                 data_type="<data_type>",
                 file_type="txt",
                 file_path=output_files["output"],
-                sources=[input_metadata["input_file_location"].file_path],
-                taxon_id=input_metadata["input_file_location"].taxon_id,
+                sources=[],
+                taxon_id=9606,
                 meta_data={
                     "tool": "testTool"
                 }
