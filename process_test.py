@@ -49,7 +49,7 @@ class process_test(Workflow):
         """
         logger.info("Processing Test")
         if configuration is None:
-           configuration = {}
+            configuration = {}
 
         self.configuration.update(configuration)
 
