@@ -57,7 +57,7 @@ class testTool(Tool):
         self.configuration.update(configuration)
 
     @task(returns=bool, file_in_loc=FILE_IN, file_out_loc=FILE_OUT, isModifier=False)
-    def test_writer(self, file_in_loc, file_out_loc):
+    def test_writer(self, file_in_loc, file_out_loc):  # pylint: disable=no-self-use
         """
         Writes a single line to a file and then returns that file
 
