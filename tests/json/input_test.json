@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "compressed": 0,
+        "_id": "unique_file_id",
+        "data_type": "text",
+        "file_type": "bam",
+        "file_path": "tests/data/test_input.txt",
+        "sources": [],
+        "taxon_id": 9606,
+        "meta_data": {
+            "visible": true,
+            "validated": 1,
+            "assembly": "GCA_000001405.22"
+        }
+    }
+]

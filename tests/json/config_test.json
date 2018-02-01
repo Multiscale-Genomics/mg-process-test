@@ -1,5 +1,12 @@
 {
-    "input_files": [],
+    "input_files": [
+        {
+            "required": true,
+            "allow_multiple": false,
+            "name": "input",
+            "value": "unique_file_id"
+        }
+    ],
     "arguments": [
         {
             "name": "project",

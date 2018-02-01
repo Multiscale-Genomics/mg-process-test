@@ -18,28 +18,39 @@
 from __future__ import print_function
 
 import os.path
+import pytest
 
 from tool.testTool import testTool
+from basic_modules.metadata import Metadata
 
+@pytest.mark.testTool
 def test_testTool():
     """
-    Test case to ensure that the GEM indexer works.
+    Test case to ensure that the testTool works.
+
+    .. code-block:: none
+
+       pytest tests/test_tool.py
     """
-    resource_path = os.path.dirname(__file__)
-    text_file = resource_path + "/test.txt"
+    resource_path = os.path.join(os.path.dirname(__file__), "data/")
 
-    input_files = {}
-
-    output_files = {
-        "output": text_file
+    input_files = {
+        "input": resource_path + "test_input.txt"
     }
 
-    metadata = {}
+    output_files = {
+        "output": resource_path + "test_output.txt"
+    }
 
-    print(input_files, output_files)
+    metadata = {
+        "input": Metadata(
+            "text", "txt", input_files["input"], None,
+            {"assembly": "test"}
+        )
+    }
 
     tt_handle = testTool()
     tt_handle.run(input_files, metadata, output_files)
 
-    assert os.path.isfile(text_file) is True
-    assert os.path.getsize(text_file) > 0
+    assert os.path.isfile(output_files["output"]) is True
+    assert os.path.getsize(output_files["output"]) > 0

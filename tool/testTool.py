@@ -23,14 +23,14 @@ from utils import logger
 try:
     if hasattr(sys, '_run_from_cmdl') is True:
         raise ImportError
-    from pycompss.api.parameter import FILE_OUT
+    from pycompss.api.parameter import FILE_IN, FILE_OUT
     from pycompss.api.task import task
     from pycompss.api.api import compss_wait_on
 except ImportError:
     logger.warn("[Warning] Cannot import \"pycompss\" API packages.")
     logger.warn("          Using mock decorators.")
 
-    from utils.dummy_pycompss import FILE_OUT # pylint: disable=ungrouped-imports
+    from utils.dummy_pycompss import FILE_IN, FILE_OUT # pylint: disable=ungrouped-imports
     from utils.dummy_pycompss import task # pylint: disable=ungrouped-imports
     from utils.dummy_pycompss import compss_wait_on # pylint: disable=ungrouped-imports
 
@@ -56,8 +56,8 @@ class testTool(Tool):
 
         self.configuration.update(configuration)
 
-    @task(returns=bool, file_loc=FILE_OUT, isModifier=False)
-    def test_writer(self, file_loc):
+    @task(returns=bool, file_in_loc=FILE_IN, file_out_loc=FILE_OUT, isModifier=False)
+    def test_writer(self, file_in_loc, file_out_loc):
         """
         Writes a single line to a file and then returns that file
 
@@ -72,8 +72,13 @@ class testTool(Tool):
             Writes to the file, which is returned by pyCOMPSs to the defined location
         """
         try:
-            with open(file_loc, "w") as file_handle:
-                file_handle.write("This is the test writer")
+            with open(file_in_loc, "r") as f_in:
+                with open(file_out_loc, "w") as file_handle:
+                    char_count = 0
+                    for line in f_in:
+                        char_count += len(line)
+
+                    file_handle.write("There are " + str(char_count) + " chacaters the file")
         except IOError as error:
             logger.fatal("I/O error({0}): {1}".format(error.errno, error.strerror))
             return False
@@ -102,7 +107,8 @@ class testTool(Tool):
         """
 
         results = self.test_writer(
-            output_files['output']
+            input_files["input"],
+            output_files["output"]
         )
         results = compss_wait_on(results)
 

@@ -18,10 +18,12 @@
 from __future__ import print_function
 
 import os.path
-import pytest # pylint: disable=unused-import
+import pytest
 
 from process_test import process_test
+from basic_modules.metadata import Metadata
 
+@pytest.mark.testTool
 def test_test_pipeline():
     """
     Test case to ensure that the Genome indexing pipeline code works.
@@ -30,31 +32,27 @@ def test_test_pipeline():
 
     .. code-block:: none
 
-       JSONDIR=/home/compss/code/mg-process-test/tests
-       runcompss                                                         \\
-          --lang=python                                                  \\
-          --python_path=/<pyenv_virtenv_dir>/lib/python2.7/site-packages/
-          --log_level=debug                                              \\
-          process_test.py                                                \\
-             --config $JSONDIR/json/config_test.py \\
-             --in_metadata $JSONDIR/json/input_test.json        \\
-             --out_metadata $JSONDIR/data/results.json
+       pytest tests/test_pipeline_test.py
     """
     resource_path = os.path.join(os.path.dirname(__file__), "data/")
 
-    files = {}
+    input_files = {
+        "input": resource_path + "test_input.txt"
+    }
 
-    metadata = {}
+    metadata = {
+        "input": Metadata(
+            "text", "txt", input_files["input"], None,
+            {"assembly": "test"}
+        )
+    }
 
     files_out = {
         "output": resource_path + 'test.txt',
     }
 
     tt_handle = process_test()
-    tt_files, tt_meta = tt_handle.run(files, metadata, files_out)
-
-    print(tt_files)
-    print(tt_meta)
+    tt_files, tt_meta = tt_handle.run(input_files, metadata, files_out)
 
     # Add tests for all files created
     for f_out in tt_files:

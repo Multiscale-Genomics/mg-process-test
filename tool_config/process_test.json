@@ -15,12 +15,25 @@
     "dna"
   ],
   "infrastructure": {
-    "memory": 12,
-    "cpus": 4,
+    "memory": 1,
+    "cpus": 1,
     "executable": "/home/pmes/code/mg-process-test/process_test.py",
     "clouds": {}
   },
-  "input_files": [],
+  "input_files": [
+      {
+          "name": "input",
+          "description": "Input file",
+          "help": "path to the input file",
+          "file_type": ["TXT"],
+          "data_type": [
+              "data_chip_seq", "data_idamid_seq", "data_mnase_seq", "data_rna_seq",
+              "data_wgbs", "data_hic"
+          ],
+          "required": true,
+          "allow_multiple": false
+      }
+  ],
   "arguments": [],
   "output_files": [
     {
