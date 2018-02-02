@@ -59,11 +59,13 @@ class testTool(Tool):
     @task(returns=bool, file_in_loc=FILE_IN, file_out_loc=FILE_OUT, isModifier=False)
     def test_writer(self, file_in_loc, file_out_loc):  # pylint: disable=no-self-use
         """
-        Writes a single line to a file and then returns that file
+        Count the number of characters in a file and return a file with the count
 
         Parameters
         ----------
-        file_loc : str
+        file_in_loc : str
+            Location of the input file
+        file_out_loc : str
             Location of an output file
 
         Returns
