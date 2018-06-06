@@ -66,7 +66,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'MuG - Test Pipelines'
-copyright = '2017, Mark McDowall'
+copyright = '2018, Mark McDowall'
 author = 'Mark McDowall'
 
 # The version info for the project you're documenting, acts as replacement for
