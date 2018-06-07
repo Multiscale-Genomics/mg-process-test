@@ -18,9 +18,6 @@
 """
 from __future__ import print_function
 
-# Required for ReadTheDocs
-from functools import wraps # pylint: disable=unused-import
-
 import argparse
 
 from basic_modules.workflow import Workflow
@@ -29,6 +26,7 @@ from utils import logger
 from tool.testTool import testTool
 
 # ------------------------------------------------------------------------------
+
 
 class process_test(Workflow):
     """
@@ -81,6 +79,7 @@ class process_test(Workflow):
         return (tt_files, tt_meta)
 
 # ------------------------------------------------------------------------------
+
 
 def main_json(config, in_metadata, out_metadata):
     """
