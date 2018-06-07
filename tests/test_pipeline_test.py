@@ -60,3 +60,4 @@ def test_test_pipeline():
         print("GENOME RESULTS FILE:", f_out)
         assert os.path.isfile(tt_files[f_out]) is True
         assert os.path.getsize(tt_files[f_out]) > 0
+        assert f_out in tt_meta
