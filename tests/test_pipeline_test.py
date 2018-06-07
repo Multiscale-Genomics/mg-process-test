@@ -20,8 +20,8 @@ from __future__ import print_function
 import os.path
 import pytest
 
-from process_test import process_test
 from basic_modules.metadata import Metadata
+from process_test import process_test
 
 
 @pytest.mark.testTool
