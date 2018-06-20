@@ -23,6 +23,6 @@ install:
 
 # command to run tests
 script:
-    - if [[ "$TESTENV" == "code" ]]; then pytest -m "not underdeverlopment"; fi
+    - if [[ "$TESTENV" == "code" ]]; then pytest -m "not underdeverlopment" mg_process_test; fi
     - if [[ "$TESTENV" == "docs" ]]; then ./scripts/travis/docs_harness.sh; fi
     - if [[ "$TESTENV" == "pylint" ]]; then ./scripts/travis/pylint_harness.sh; fi
