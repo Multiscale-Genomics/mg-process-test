@@ -18,7 +18,7 @@ Pipelines
 
 Test Tool
 ---------
-.. automodule:: mg_process_test.process_test
+.. automodule:: process_test
 
    This is a demonstration pipeline using the testTool.
 
@@ -51,5 +51,5 @@ Test Tool
 
    Methods
    =======
-   .. autoclass:: mg_process_test.process_test.process_test
+   .. autoclass:: process_test.process_test
       :members:
