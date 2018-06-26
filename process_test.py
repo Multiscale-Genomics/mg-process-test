@@ -23,7 +23,7 @@ import argparse
 from basic_modules.workflow import Workflow
 from utils import logger
 
-from tool.testTool import testTool
+from mg_process_test.tool.testTool import testTool
 
 # ------------------------------------------------------------------------------
 

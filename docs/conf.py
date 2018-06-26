@@ -17,20 +17,23 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os, sys
+
+import os
+import sys
+from mock import Mock as MagicMock
+
 sys.path.insert(0, os.path.abspath('..'))
 
-from mock import Mock as MagicMock
 
 class Mock(MagicMock):
     @classmethod
     def __getattr__(cls, name):
-            return MagicMock()
+        return MagicMock()
 
 MOCK_MODULES = []
 sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
-import tool
+import mg_process_test.tool
 #import script
 
 

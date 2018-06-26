@@ -1,3 +1,4 @@
+"""
 .. See the NOTICE file distributed with this work for additional information
    regarding copyright ownership.
 
@@ -13,12 +14,21 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-Tools
-=====
+Config setting for pytest
+"""
 
-.. automodule:: mg_process_test.tool
 
-   Test Tool
-   -----------
-   .. autoclass:: mg_process_test.tool.testTool.testTool
-      :members:
+def pytest_configure(config):  # pylint: disable=unused-argument
+    """
+    Additional settings for pytest
+    """
+    import sys
+    sys._run_from_cmdl = True  # pylint: disable=protected-access
+
+
+def pytest_unconfigure(config):  # pylint: disable=unused-argument
+    """
+    Remove additional settings for pytest
+    """
+    import sys
+    del sys._run_from_cmdl

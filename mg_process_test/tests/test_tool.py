@@ -21,7 +21,7 @@ import os.path
 import pytest
 
 from basic_modules.metadata import Metadata
-from tool.testTool import testTool
+from mg_process_test.tool.testTool import testTool
 
 
 @pytest.mark.testTool
