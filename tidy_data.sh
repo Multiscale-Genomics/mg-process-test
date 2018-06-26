@@ -19,7 +19,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd $DIR
-cd mg-process-test/tests/data
+cd mg_process_test/tests/data
 
 # Known test data files to keep
 c=$(git rev-parse --abbrev-ref HEAD)
