@@ -1,4 +1,4 @@
-# mg-process-test
+# mg-process-macs2
 
 [![Documentation Status](https://readthedocs.org/projects/mg-process-test/badge/?version=latest)](http://mg-process-test.readthedocs.io/en/latest/?badge=latest) [![Build Status](https://travis-ci.org/Multiscale-Genomics/mg-process-test.svg?branch=master)](https://travis-ci.org/Multiscale-Genomics/mg-process-test) [![Code Health](https://landscape.io/github/Multiscale-Genomics/mg-process-test/master/landscape.svg?style=flat)](https://landscape.io/github/Multiscale-Genomics/mg-process-test/master)
 
