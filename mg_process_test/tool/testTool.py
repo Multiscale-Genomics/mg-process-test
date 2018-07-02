@@ -40,7 +40,7 @@ from basic_modules.metadata import Metadata
 # ------------------------------------------------------------------------------
 
 
-class testTool(Tool):
+class testTool(Tool):  # pylint: disable=invalid-name
     """
     Tool for writing to a file
     """
