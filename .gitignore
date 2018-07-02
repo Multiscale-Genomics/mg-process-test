@@ -7,6 +7,7 @@ env/*
 *.DS_Store
 *_build*
 .eggs*
-mg_process_test.egg-info*
+*.egg-info*
 .cache
+.pytest_cache
 /tests/data/tmp
