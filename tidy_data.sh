@@ -18,8 +18,10 @@
 # Get the location of this script - Should be in the root of the module
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+TEST_DIR=$(python -c 'import ConfigParser; config = ConfigParser.RawConfigParser(); config.read("pytest.ini"); print(config.get("pytest", "testpaths"))')
+
 cd $DIR
-cd mg_process_test/tests/data
+cd $TEST_DIR/data
 
 # Known test data files to keep
 c=$(git rev-parse --abbrev-ref HEAD)
