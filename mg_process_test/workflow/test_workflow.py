@@ -24,7 +24,7 @@ from mg_process_test.tool.testTool import testTool
 # ------------------------------------------------------------------------------
 
 
-class process_test(Workflow):
+class process_test(Workflow):  # pylint: disable=invalid-name,too-few-public-methods
     """
     Functions for demonstrating the pipeline set up.
     """
