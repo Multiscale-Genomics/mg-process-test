@@ -48,8 +48,3 @@ Test Tool
 
       cd /home/compss/code/mg-process-test
       runcompss --lang=python mg_process_test/process_test.py --config /home/compss/code/mg-process-test/tool_config/process_test.json --in_metadata /home/compss/code/mg-process-test/tests/json/input_test.json --out_metadata /home/compss/code/mg-process-test/tests/results.json
-
-   Methods
-   =======
-   .. autoclass:: process_test.process_test
-      :members:
