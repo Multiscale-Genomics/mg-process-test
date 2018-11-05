@@ -13,30 +13,12 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-.. MuG - Process Test files Pipelines documentation master file, created by
-   sphinx-quickstart on Thu Feb 23 13:50:00 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Workflows
+=========
 
-Documentation for Test Pipeline
-===============================
+.. automodule:: mg_process_test.workflow
 
-.. toctree::
-   :caption: Table of Contents
-   :name: mastertoc
-   :maxdepth: 2
-
-   install
-   pipelines
-   tool
-   workflow
-   license
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   Test Tool
+   -----------
+   .. autoclass:: mg_process_test.workflow.test_workflow.process_test
+      :members:

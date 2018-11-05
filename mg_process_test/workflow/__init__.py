@@ -1,3 +1,4 @@
+"""
 .. See the NOTICE file distributed with this work for additional information
    regarding copyright ownership.
 
@@ -12,31 +13,4 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
-.. MuG - Process Test files Pipelines documentation master file, created by
-   sphinx-quickstart on Thu Feb 23 13:50:00 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Documentation for Test Pipeline
-===============================
-
-.. toctree::
-   :caption: Table of Contents
-   :name: mastertoc
-   :maxdepth: 2
-
-   install
-   pipelines
-   tool
-   workflow
-   license
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+"""
